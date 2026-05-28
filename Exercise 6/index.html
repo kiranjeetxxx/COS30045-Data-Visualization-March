@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Powering the Screen — TV Energy in Australia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ex6.css" />
+</head>
+<body>
+
+ 
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo" onclick="showPage('home')" role="button" tabindex="0" aria-label="Go to home">
+        <svg class="logo-svg" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="5" width="24" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M10 21v3M20 21v3M7 24h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="15" cy="13" r="3" fill="currentColor" opacity="0.3"/>
+          <path d="M15 10v6M12 13h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">EnergyScreen</span>
+      </div>
+      <ul class="nav-links" role="list">
+        <li><button class="nav-btn active" data-page="home" onclick="showPage('home')">Home</button></li>
+        <li><button class="nav-btn" data-page="story" onclick="showPage('story')">The Story</button></li>
+        <li><button class="nav-btn" data-page="televisions" onclick="showPage('televisions')">Data &amp; Charts</button></li>
+        <li><button class="nav-btn" data-page="about" onclick="showPage('about')">About</button></li>
+        <li><button class="nav-btn" data-page="ex41" onclick="showPage('ex41')">Ex 4.1</button></li>
+        <li><button class="nav-btn" data-page="ex43" onclick="showPage('ex43')">Ex 4.3–4.6</button></li>
+        <li><button class="nav-btn" data-page="ex5" onclick="showPage('ex5')">Ex 5</button></li>
+        <li><button class="nav-btn" data-page="ex6" onclick="showPage('ex6')">Ex 6</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    
+    <section class="page active" id="page-home">
+
+      <div class="hero">
+        <span class="hero-eyebrow">COS30045 · Data Visualisation · Exercise 3</span>
+        <h1 class="hero-title">Does your TV cost more than you <em>think</em> to run?</h1>
+        <p class="hero-sub">An exploration of TV energy consumption data from Australia's appliance register — uncovering how screen size, technology, and star ratings shape your electricity bill.</p>
+        <button class="cta-btn" onclick="showPage('story')">Explore the Story →</button>
+      </div>
+
+      <div class="stats-band">
+        <div class="stat-item">
+          <span class="stat-number">6+</span>
+          <p class="stat-label">Screen technologies compared across the dataset</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">85"</span>
+          <p class="stat-label">Largest screen size reaching up to 210W consumption</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">OLED</span>
+          <p class="stat-label">Technology with the best energy efficiency per inch</p>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">★★★★★</span>
+          <p class="stat-label">Star ratings do not always mean lower power draw</p>
+        </div>
+      </div>
+
+      <section class="cards-section">
+        <h2 class="section-title">What this data reveals</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-num">01</div>
+            <h3>Screen Tech Matters</h3>
+            <p>OLED and QLED panels differ dramatically in how they handle power — not all "modern" TVs are equal.</p>
+            <span class="card-tag">Technology</span>
+          </div>
+          <div class="card card-invert">
+            <div class="card-num">02</div>
+            <h3>Size Drives Cost</h3>
+            <p>Going from a 43″ to a 75″ TV more than doubles your power draw — every inch adds up on your bill.</p>
+            <span class="card-tag">Screen Size</span>
+          </div>
+          <div class="card">
+            <div class="card-num">03</div>
+            <h3>Stars Can Deceive</h3>
+            <p>A 5-star 75″ TV can consume far more than a 3-star 32″ model. Ratings are relative to size category.</p>
+            <span class="card-tag">Star Rating</span>
+          </div>
+          <div class="card">
+            <div class="card-num">04</div>
+            <h3>Brands Vary Widely</h3>
+            <p>Some brands offer dozens of models optimised for efficiency; others prioritise feature sets over energy savings.</p>
+            <span class="card-tag">Brand</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="insight-strip">
+        <div class="insight-text">
+          <h2>The hidden cost of the "bigger is better" mindset</h2>
+          <p>Australian households spend an average of $100–$160 per year running a single large-screen television. When screen size doubles, power consumption doesn't just increase — it compounds. Understanding the relationship between size, technology, and energy rating is the first step to smarter purchasing decisions.</p>
+        </div>
+        <div class="star-block">
+          <div class="star-row">⚡</div>
+          <small>Energy Insight</small>
+        </div>
+      </div>
+
+    </section>
+
+   
+    <section class="page" id="page-story">
+
+      <div class="page-header">
+        <p class="page-eyebrow">Data Story</p>
+        <h1 class="page-title">The TV Energy Story</h1>
+        <p class="page-intro">A narrative journey through Australia's TV energy consumption data — told for everyday households making purchasing decisions.</p>
+      </div>
+
+      <div class="story-body">
+
+       
+        <div class="story-chapter">
+          <div class="chapter-label">Chapter 01</div>
+          <h2 class="chapter-title">Who is this for?</h2>
+          <div class="chapter-content">
+            <p>This story is written for <strong>Australian households</strong> — renters, homeowners, and families who are buying or replacing a TV and want to make a smarter, more energy-conscious decision. They are not technical experts; they understand star ratings exist but may not realise how relative those ratings are.</p>
+            <p>Their key question is simple: <em>"Which TV should I buy if I care about my electricity bill?"</em></p>
+          </div>
+          <div class="story-callout">
+            <strong>Audience priorities:</strong> Running cost over time · Easy-to-understand comparisons · Practical size guidance · Technology trade-offs
+          </div>
+        </div>
+
+       
+        <div class="story-chapter alt-bg">
+          <div class="chapter-label">Chapter 02</div>
+          <h2 class="chapter-title">Not all screens are born equal</h2>
+          <div class="chapter-content">
+            <p>Australia's appliance market features several dominant screen technologies: <strong>LED</strong> remains the most common, found across budget to mid-range sets. <strong>OLED</strong> panels light each pixel individually, switching off completely in dark scenes — a natural energy advantage. <strong>QLED</strong> enhances LED backlighting with quantum dots, offering brightness with moderate efficiency. <strong>Plasma</strong>, now discontinued, was historically the hungriest technology.</p>
+            <p>LED dominates by sheer volume — it's what most Australians will encounter when shopping. But OLED's efficiency story is compelling for larger screens.</p>
+          </div>
+
+          <div class="story-viz-wrap">
+            <div class="mini-chart-title">Screen Technology — Market Frequency</div>
+            <div class="tech-bar-wrap" id="techFreqChart">
+              <!-- Built by JS -->
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="story-chapter">
+          <div class="chapter-label">Chapter 03</div>
+          <h2 class="chapter-title">Size is the single biggest driver of power use</h2>
+          <div class="chapter-content">
+            <p>The relationship between screen size and power consumption is close to <em>linear</em>: larger screens need more backlight, more processing power, and larger circuits. A 32-inch set draws around <strong>40W</strong>; step up to 75 inches and you're looking at <strong>165W</strong> — four times the draw. At typical Australian electricity prices (~$0.30/kWh), that gap translates to roughly <strong>$35–$45 extra per year</strong> just from screen size alone.</p>
+            <p>The chart on the Data & Charts page shows this relationship interactively — hover over each bar to see the exact wattage for each size category.</p>
+          </div>
+          <div class="story-callout">
+            <strong>Rule of thumb:</strong> Every 10-inch increase in screen size adds approximately 25–35W to your TV's power draw.
+          </div>
+        </div>
+
+  
+        <div class="story-chapter alt-bg">
+          <div class="chapter-label">Chapter 04</div>
+          <h2 class="chapter-title">Brand diversity — more models, more choice</h2>
+          <div class="chapter-content">
+            <p>Several brands dominate the Australian market in terms of model variety. <strong>Samsung</strong> and <strong>LG</strong> offer the widest catalogue, giving consumers the most choice. <strong>Sony</strong> focuses on fewer, premium lines. Smaller brands like <strong>TCL</strong> and <strong>Hisense</strong> have grown rapidly with budget-efficient options that still carry competitive star ratings.</p>
+            <p>More models doesn't automatically mean better energy options — but it does mean consumers have more room to comparison-shop within their preferred brand.</p>
+          </div>
+
+          <div class="brand-pills">
+            <span class="brand-pill tier-1">Samsung · Wide Range</span>
+            <span class="brand-pill tier-1">LG · Most OLED</span>
+            <span class="brand-pill tier-2">Sony · Premium</span>
+            <span class="brand-pill tier-2">TCL · Budget Efficient</span>
+            <span class="brand-pill tier-3">Hisense · Growing Fast</span>
+            <span class="brand-pill tier-3">Panasonic · Mid-range</span>
+          </div>
+        </div>
+
+      
+        <div class="story-chapter">
+          <div class="chapter-label">Chapter 05</div>
+          <h2 class="chapter-title">Which technology sips the least power?</h2>
+          <div class="chapter-content">
+            <p>When we compare average power consumption per screen technology, <strong>OLED emerges as the most efficient</strong> at comparable screen sizes — thanks to its ability to turn off individual pixels rather than maintaining a full backlight. Standard LED performs well at smaller sizes but becomes less competitive at 65"+ where the backlight demands spike.</p>
+            <p>QLED sits in the middle — brighter than OLED in some scenarios but drawing more consistent baseline power.</p>
+          </div>
+
+          <div class="tech-power-table">
+            <table class="story-table">
+              <thead>
+                <tr><th>Technology</th><th>Avg. Power (W)</th><th>Efficiency Verdict</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>OLED</td><td>~80W</td><td><span class="verdict best">Best ✓</span></td></tr>
+                <tr><td>LED</td><td>~95W</td><td><span class="verdict good">Good</span></td></tr>
+                <tr><td>QLED</td><td>~110W</td><td><span class="verdict mid">Moderate</span></td></tr>
+                <tr><td>Mini-LED</td><td>~120W</td><td><span class="verdict mid">Moderate</span></td></tr>
+              </tbody>
+            </table>
+            <p class="table-note">* Averages across all screen sizes in the Australian register dataset.</p>
+          </div>
+        </div>
+
+       
+        <div class="story-chapter alt-bg">
+          <div class="chapter-label">Chapter 06</div>
+          <h2 class="chapter-title">Star ratings: helpful, but read the fine print</h2>
+          <div class="chapter-content">
+            <p>Australia's energy star rating system rates TVs <em>relative to other TVs of the same size</em>. This is crucial to understand: a 5-star 75″ television may still consume 180W — far more than a 2-star 32″ set drawing 35W. The rating tells you how efficient a TV is <em>for its size</em>, not how much electricity it will actually use.</p>
+            <p>The data shows a mild inverse relationship: as screen size grows, achieving high star ratings becomes harder, and average star ratings slightly decline. Consumers shopping purely by stars, without checking wattage, may end up with a surprising electricity bill.</p>
+          </div>
+          <div class="story-callout warning">
+            <strong>⚠️ Watch out:</strong> A 5-star 75″ TV can cost 4× more to run than a 3-star 32″ TV. Always check the annual energy consumption figure on the label (kWh/year), not just the stars.
+          </div>
+        </div>
+
+      
+        <div class="story-chapter conclusion-chapter">
+          <div class="chapter-label">Conclusion</div>
+          <h2 class="chapter-title">The smarter buying decision</h2>
+          <div class="chapter-content">
+            <p>For Australians choosing a new TV, the data points to a clear framework: <strong>buy the smallest screen that comfortably fits your space</strong>, choose <strong>OLED if budget allows</strong> for large screens, check the <strong>kWh/year figure</strong> on the energy label (not just the stars), and favour brands with a wide model range so you can comparison-shop within your budget.</p>
+            <p>The difference between a thoughtful and an impulsive TV purchase could mean <strong>$50–$100 saved every year</strong> on electricity — over a TV's 7–10 year lifespan, that's real money back in your pocket.</p>
+          </div>
+          <button class="cta-btn" onclick="showPage('televisions')">Explore the Interactive Charts →</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page" id="page-televisions">
+
+      <div class="page-header">
+        <p class="page-eyebrow">Interactive Data</p>
+        <h1 class="page-title">TV Power Consumption Data</h1>
+        <p class="page-intro">Explore the full dataset — from power draw by screen size to technology comparisons and efficiency rankings.</p>
+      </div>
+
+
+      <div class="tv-section">
+        <h2 class="section-title">Power Consumption by Screen Size</h2>
+        <p class="section-desc">Larger screens demand significantly more wattage. Hover over each bar to see exact figures. Based on average mode power across all televisions in the Australian register.</p>
+        <div class="chart-section">
+          <div class="bar-chart" id="barChart" role="img" aria-label="Bar chart showing TV power consumption by screen size"></div>
+          <div class="chart-legend">
+            <span class="legend-swatch"></span>
+            Average mode power (Watts) by screen size category
+          </div>
+        </div>
+      </div>
+
+    
+      <div class="tv-section alt-bg-section">
+        <h2 class="section-title">Screen Size vs. Power — Scatter View</h2>
+        <p class="section-desc">Each point represents a television model in the dataset. The trend line confirms: as screen size grows, power draw rises predictably.</p>
+        <div class="scatter-wrap">
+          <svg id="scatterPlot" class="scatter-svg" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" aria-label="Scatter plot of screen size vs power">
+         
+          </svg>
+        </div>
+      </div>
+
+   
+      <div class="tv-section">
+        <h2 class="section-title">Average Power by Screen Technology</h2>
+        <p class="section-desc">Comparing average wattage across different display technologies reveals OLED's efficiency advantage at larger screen sizes.</p>
+        <div class="chart-section">
+          <div class="bar-chart" id="techChart" role="img" aria-label="Bar chart comparing power by screen technology"></div>
+          <div class="chart-legend">
+            <span class="legend-swatch"></span>
+            Average mode power (Watts) by screen technology
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Data Table -->
+      <div class="tv-section">
+        <h2 class="section-title">Full Reference Table</h2>
+        <p class="section-desc">Detailed breakdown of power consumption across screen sizes with estimated annual running costs at Australian electricity prices ($0.30/kWh, 5 hrs/day).</p>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Screen Size</th>
+                <th>Technology</th>
+                <th>Avg. Power (W)</th>
+                <th>Est. Annual Cost</th>
+                <th>Efficiency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>32″</td>
+                <td><span class="tech-badge">LED</span></td>
+                <td>40W</td>
+                <td>~$22/yr</td>
+                <td><span class="tech-badge">Very Low</span></td>
+              </tr>
+              <tr>
+                <td>43″</td>
+                <td><span class="tech-badge">LED</span></td>
+                <td>65W</td>
+                <td>~$36/yr</td>
+                <td><span class="tech-badge">Low</span></td>
+              </tr>
+              <tr>
+                <td>55″</td>
+                <td><span class="tech-badge b-mid">OLED / QLED</span></td>
+                <td>95W</td>
+                <td>~$52/yr</td>
+                <td><span class="tech-badge b-mid">Moderate</span></td>
+              </tr>
+              <tr>
+                <td>65″</td>
+                <td><span class="tech-badge b-mid">OLED / QLED</span></td>
+                <td>130W</td>
+                <td>~$71/yr</td>
+                <td><span class="tech-badge b-mid">Moderate</span></td>
+              </tr>
+              <tr>
+                <td>75″</td>
+                <td><span class="tech-badge b-dark">QLED / Mini-LED</span></td>
+                <td>165W</td>
+                <td>~$90/yr</td>
+                <td><span class="tech-badge b-dark">High</span></td>
+              </tr>
+              <tr>
+                <td>85″</td>
+                <td><span class="tech-badge b-dark">Mini-LED / QLED</span></td>
+                <td>210W</td>
+                <td>~$115/yr</td>
+                <td><span class="tech-badge b-dark">Very High</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="table-note">* Annual cost estimate: (Watts × 5 hrs/day × 365 days) ÷ 1000 × $0.30. Actual costs vary by usage pattern and electricity provider.</p>
+        </div>
+      </div>
+
+      <!-- Tips -->
+      <div class="tips-section">
+        <h2 class="section-title">5 Ways to Cut Your TV's Energy Use</h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <h3>Match size to room</h3>
+            <p>Choose the smallest screen that looks great from your typical viewing distance. Bigger isn't always better for your eyes or wallet.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <h3>Check kWh, not just stars</h3>
+            <p>The energy label shows annual kWh consumption — compare this number directly between models rather than star ratings alone.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <h3>Use Eco mode</h3>
+            <p>Most modern TVs include an Eco or Energy Saving mode that reduces brightness and can cut consumption by 20–40%.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <h3>Turn off standby</h3>
+            <p>Standby power draws 1–5W constantly. Using the switch at the wall when not in use adds up to a meaningful annual saving.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">05</div>
+            <h3>Consider OLED at 55″+</h3>
+            <p>At larger sizes, OLED's per-pixel lighting offers the best balance of picture quality and energy efficiency available today.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="page" id="page-about">
+
+      <div class="page-header">
+        <p class="page-eyebrow">About this project</p>
+        <h1 class="page-title">About &amp; Data Sources</h1>
+        <p class="page-intro">COS30045 Exercise 3 — communicating data insights through visualisation and narrative.</p>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-block">
+          <h2>About the Data</h2>
+          <p><strong>Source:</strong> Australian Government's Equipment Energy Efficiency (E3) Program appliance register — a publicly available dataset of energy-rated televisions sold in Australia.</p>
+          <p><strong>Data Processing:</strong> Data was explored in KNIME, grouped by screen size category and technology type, and average mode power (watts) was calculated per group for visualisation.</p>
+          <p><strong>Privacy:</strong> The dataset contains no personal information. All records are product specifications submitted by manufacturers for public energy rating registration.</p>
+          <p><strong>Accuracy &amp; Limitations:</strong> Power figures represent manufacturer-declared mode power under test conditions — real-world usage may vary with brightness settings, content type, and ambient light. Older or discontinued models may be included in averages.</p>
+          <p><strong>Ethics:</strong> No data has been manipulated to favour particular brands or technologies. Comparisons are presented across full dataset averages to minimise selection bias.</p>
+        </div>
+
+        <div class="about-block">
+          <h2>Data Story Summary</h2>
+          <p><strong>Audience:</strong> Australian households making TV purchasing decisions who want to understand real-world energy implications.</p>
+          <p><strong>Key Questions Answered:</strong></p>
+          <ul class="src-list">
+            <li>What screen technologies are most common?</li>
+            <li>Which sizes are available and how frequent are they?</li>
+            <li>Which brands offer the most model choice?</li>
+            <li>Which technology uses the least power?</li>
+            <li>How does size correlate with power use?</li>
+            <li>How do star ratings relate to actual consumption?</li>
+          </ul>
+        </div>
+
+        <div class="about-block">
+          <h2>Technologies Used</h2>
+          <ul class="tech-list">
+            <li><span class="tech-pill">HTML5</span> Semantic structure &amp; accessibility</li>
+            <li><span class="tech-pill">CSS3</span> Custom properties, grid, animations</li>
+            <li><span class="tech-pill">JavaScript</span> Chart building, interaction, routing</li>
+            <li><span class="tech-pill">SVG</span> Scatter plot visualisation</li>
+            <li><span class="tech-pill">KNIME</span> Data exploration &amp; processing</li>
+            <li><span class="tech-pill">Google Fonts</span> Playfair Display &amp; Syne</li>
+          </ul>
+        </div>
+
+      
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         EXERCISE 4.1 — SVG House & Garden
+    ═══════════════════════════════════════════════════════ -->
+    <section class="page" id="page-ex41">
+      <div class="page-header">
+        <p class="page-eyebrow">Exercise 4.1 · SVG Shapes</p>
+        <h1 class="page-title">House &amp; Garden</h1>
+        <p class="page-intro">A picture drawn entirely with SVG primitives — rect, circle, ellipse, line, polyline, polygon, path, text, and g.</p>
+      </div>
+      <div class="ex41-wrap">
+        <svg class="house-svg" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky: rect -->
+          <rect x="0" y="0" width="900" height="360" fill="#b8daf0"/>
+          <!-- Ground: rect -->
+          <rect x="0" y="360" width="900" height="200" fill="#6aaa36"/>
+          <!-- Sun: circle -->
+          <circle cx="800" cy="72" r="64" fill="#f7da6a" opacity="0.35"/>
+          <circle cx="800" cy="72" r="44" fill="#f5c332"/>
+          <!-- Clouds: ellipse -->
+          <ellipse cx="180" cy="68" rx="72" ry="34" fill="white" opacity="0.9"/>
+          <ellipse cx="234" cy="54" rx="56" ry="30" fill="white" opacity="0.9"/>
+          <ellipse cx="144" cy="72" rx="44" ry="26" fill="white" opacity="0.9"/>
+          <ellipse cx="530" cy="52" rx="66" ry="28" fill="white" opacity="0.82"/>
+          <ellipse cx="575" cy="40" rx="46" ry="24" fill="white" opacity="0.82"/>
+          <!-- Left tree: rect trunk + polygon canopy -->
+          <rect x="68" y="320" width="26" height="60" fill="#7b5030"/>
+          <polygon points="50,328 81,228 112,328" fill="#2f7828"/>
+          <polygon points="44,292 81,198 118,292" fill="#3a8a34"/>
+          <polygon points="50,268 81,175 112,268" fill="#48a040"/>
+          <!-- House walls: rect -->
+          <rect x="212" y="264" width="424" height="232" fill="#c8a888" rx="2"/>
+          <rect x="210" y="260" width="420" height="230" fill="#f5e6cc" stroke="#c8a070" stroke-width="2"/>
+          <!-- Roof: polygon -->
+          <polygon points="168,265 420,112 672,265" fill="#8b3a2a" stroke="#6b2a1a" stroke-width="2"/>
+          <!-- Chimney: rect + path cap -->
+          <rect x="548" y="138" width="56" height="130" fill="#a03828" stroke="#7a2818" stroke-width="1.5"/>
+          <path d="M 538 142 Q 576 133 614 142 L 610 152 Q 576 142 542 152 Z" fill="#7a2818"/>
+          <!-- Smoke: path -->
+          <path d="M 568 132 Q 590 108 564 88 Q 542 70 568 52" stroke="#ccc" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.6"/>
+          <!-- Door: rect -->
+          <rect x="352" y="354" width="76" height="136" fill="#6b3a2a" stroke="#4a2010" stroke-width="2" rx="4"/>
+          <rect x="360" y="362" width="26" height="40" fill="#7a4232" rx="2"/>
+          <rect x="394" y="362" width="26" height="40" fill="#7a4232" rx="2"/>
+          <rect x="360" y="410" width="60" height="32" fill="#7a4232" rx="2"/>
+          <!-- Door knob: circle -->
+          <circle cx="418" cy="424" r="7" fill="#d4a843"/>
+          <!-- Door step: line -->
+          <line x1="338" y1="490" x2="442" y2="490" stroke="#c8a070" stroke-width="5" stroke-linecap="round"/>
+          <!-- Windows: g group with translate — both share the same stroke via parent g -->
+          <g id="windows" stroke="#8b8070" stroke-width="2.5">
+            <g transform="translate(228,282)">
+              <rect width="92" height="70" fill="#c8e8f5" rx="3"/>
+              <line x1="46" y1="0" x2="46" y2="70" stroke="#8b8070" stroke-width="2"/>
+              <line x1="0" y1="35" x2="92" y2="35" stroke="#8b8070" stroke-width="2"/>
+              <line x1="-6" y1="70" x2="98" y2="70" stroke="#8b8070" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(520,282)">
+              <rect width="92" height="70" fill="#c8e8f5" rx="3"/>
+              <line x1="46" y1="0" x2="46" y2="70" stroke="#8b8070" stroke-width="2"/>
+              <line x1="0" y1="35" x2="92" y2="35" stroke="#8b8070" stroke-width="2"/>
+              <line x1="-6" y1="70" x2="98" y2="70" stroke="#8b8070" stroke-width="4" stroke-linecap="round"/>
+            </g>
+          </g>
+          <!-- Garden path: path -->
+          <path d="M 355 490 C 358 458 368 430 380 406 L 400 406 C 412 430 422 458 425 490 Z" fill="#c4a060" opacity="0.85"/>
+          <!-- Bushes: ellipse -->
+          <ellipse cx="220" cy="388" rx="42" ry="30" fill="#2a7028"/>
+          <ellipse cx="252" cy="378" rx="30" ry="23" fill="#359030"/>
+          <ellipse cx="630" cy="388" rx="42" ry="30" fill="#2a7028"/>
+          <ellipse cx="598" cy="378" rx="30" ry="23" fill="#359030"/>
+          <!-- Fence: polyline rails + line posts -->
+          <polyline points="680,408 898,408" stroke="#d4c090" stroke-width="5" fill="none"/>
+          <polyline points="680,432 898,432" stroke="#d4c090" stroke-width="5" fill="none"/>
+          <line x1="680" y1="394" x2="680" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="710" y1="394" x2="710" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="740" y1="394" x2="740" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="770" y1="394" x2="770" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="800" y1="394" x2="800" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="830" y1="394" x2="830" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="860" y1="394" x2="860" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <line x1="890" y1="394" x2="890" y2="448" stroke="#d4c090" stroke-width="7" stroke-linecap="round"/>
+          <!-- Flowers: line stems + circle petals -->
+          <line x1="116" y1="370" x2="116" y2="395" stroke="#2a7028" stroke-width="3"/>
+          <line x1="148" y1="375" x2="148" y2="395" stroke="#2a7028" stroke-width="3"/>
+          <circle cx="116" cy="363" r="14" fill="#e84848"/>
+          <circle cx="116" cy="363" r="6" fill="#f7c332"/>
+          <circle cx="148" cy="368" r="12" fill="#f87878"/>
+          <circle cx="148" cy="368" r="5" fill="#f7c332"/>
+          <line x1="700" y1="370" x2="700" y2="390" stroke="#2a7028" stroke-width="3"/>
+          <line x1="730" y1="375" x2="730" y2="390" stroke="#2a7028" stroke-width="3"/>
+          <circle cx="700" cy="362" r="13" fill="#e07820"/>
+          <circle cx="700" cy="362" r="5" fill="#f7c332"/>
+          <circle cx="730" cy="368" r="11" fill="#c040a0"/>
+          <circle cx="730" cy="368" r="4" fill="#f7c332"/>
+          <!-- Right tree: rect + polygon -->
+          <rect x="142" y="322" width="24" height="58" fill="#7b5030"/>
+          <polygon points="118,328 154,235 190,328" fill="#2f7828"/>
+          <polygon points="112,295 154,205 196,295" fill="#3a8a34"/>
+          <!-- House number: text -->
+          <text x="390" y="384" text-anchor="middle" font-size="26" font-weight="bold" fill="#f5e6cc" font-family="Georgia,serif" letter-spacing="2">42</text>
+          <!-- Letterbox: line post + rect box -->
+          <line x1="170" y1="430" x2="170" y2="480" stroke="#555" stroke-width="5"/>
+          <rect x="145" y="410" width="50" height="22" fill="#888" rx="4"/>
+          <line x1="145" y1="422" x2="195" y2="422" stroke="#666" stroke-width="2"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         EXERCISES 4.3–4.6 — D3 Bar Chart from CSV
+    ═══════════════════════════════════════════════════════ -->
+    <section class="page" id="page-ex43">
+      <div class="page-header">
+        <p class="page-eyebrow">Exercises 4.3 – 4.6 · D3.js</p>
+        <h1 class="page-title">D3 Bar Chart</h1>
+        <p class="page-intro">TV brand model counts from the Australian energy register — loaded from CSV with <code style="font-family:monospace;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px">d3.csv()</code>, scaled with <code style="font-family:monospace;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px">scaleLinear</code> &amp; <code style="font-family:monospace;background:rgba(255,255,255,0.1);padding:2px 6px;border-radius:4px">scaleBand</code>.</p>
+      </div>
+      <div class="ex43-wrap">
+        <!-- Ex 4.3: D3 appends the SVG into this div -->
+        <div class="responsive-svg-container" id="d3-chart-container"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         EXERCISE 5 — Multi-chart D3 page
+    ═══════════════════════════════════════════════════════ -->
+    <section class="page" id="page-ex5">
+
+      <div class="page-header">
+        <p class="page-eyebrow">Exercise 5 · D3.js Multi-Chart</p>
+        <h1 class="page-title">TV Energy Data — Four Charts</h1>
+        <p class="page-intro">Four interactive D3 charts from the Australian TV energy register: a scatter plot, donut chart, bar chart, and electricity price line chart.</p>
+      </div>
+
+      <div class="ex5-grid">
+
+        <!-- Chart 1: Scatter plot -->
+        <div class="ex5-card">
+          <div class="ex5-card-header">
+            <span class="ex5-badge">Chart 1</span>
+            <h2 class="ex5-chart-title">Energy Consumption vs Star Rating</h2>
+            <p class="ex5-chart-desc">Each point is one TV model. Does a higher star rating mean lower power draw? (300 randomly sampled models from the register.)</p>
+          </div>
+          <div class="ex5-chart-wrap" id="scatter-wrap"></div>
+        </div>
+
+        <!-- Chart 2: Donut chart -->
+        <div class="ex5-card">
+          <div class="ex5-card-header">
+            <span class="ex5-badge">Chart 2</span>
+            <h2 class="ex5-chart-title">Avg. Power by Screen Technology</h2>
+            <p class="ex5-chart-desc">Average mode power consumption (Watts) split across all screen technologies in the full dataset.</p>
+          </div>
+          <div class="ex5-chart-wrap" id="donut-wrap"></div>
+        </div>
+
+        <!-- Chart 3: Bar chart 55-inch -->
+        <div class="ex5-card">
+          <div class="ex5-card-header">
+            <span class="ex5-badge">Chart 3</span>
+            <h2 class="ex5-chart-title">55-inch TVs — Power by Technology</h2>
+            <p class="ex5-chart-desc">Average mode power consumption for 55-inch TVs only (≈139 cm diagonal, n=804 models), broken down by screen technology.</p>
+          </div>
+          <div class="ex5-chart-wrap" id="bar55-wrap"></div>
+        </div>
+
+        <!-- Chart 4: Line chart -->
+        <div class="ex5-card">
+          <div class="ex5-card-header">
+            <span class="ex5-badge">Chart 4</span>
+            <h2 class="ex5-chart-title">Australian Spot Electricity Prices 1998–2024</h2>
+            <p class="ex5-chart-desc">Average wholesale spot electricity prices (AUD/MWh) in the National Electricity Market — context for the cost of running your TV.</p>
+          </div>
+          <div class="ex5-chart-wrap" id="line-wrap"></div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         EXERCISE 6 — Interactive Histogram + Scatterplot
+    ═══════════════════════════════════════════════════════ -->
+    <section class="page" id="page-ex6">
+
+      <div class="page-header">
+        <p class="page-eyebrow">Exercise 6 · D3.js Interaction</p>
+        <h1 class="page-title">Interactive Charts</h1>
+        <p class="page-intro">Exercise 6.1: An interactive histogram of TV energy consumption with screen technology and screen size filters. Exercise 6.2: A colour-coded scatterplot with tooltips showing brand, model and screen size.</p>
+      </div>
+
+      <div class="ex6-wrap">
+
+        <!-- ── Exercise 6.1: Histogram ── -->
+        <div class="ex6-card">
+          <div class="ex6-card-header">
+            <span class="ex5-badge">Exercise 6.1 · Histogram</span>
+            <h2 class="ex6-card-title">TV Energy Consumption Distribution</h2>
+            <p class="ex6-card-desc">Frequency of annual energy consumption (kWh/year) across 3,703 TV models. Use the filters below to explore LED, LCD and OLED technologies, or filter by screen size.</p>
+          </div>
+
+          <!-- Screen Technology filters -->
+          <div class="filter-row" id="filters-tech">
+            <span class="filter-label">Screen Tech:</span>
+          </div>
+
+          <!-- Screen Size filters -->
+          <div class="filter-row" id="filters-size">
+            <span class="filter-label">Screen Size:</span>
+          </div>
+
+          <div class="ex6-chart-wrap">
+            <div id="histogram"></div>
+          </div>
+        </div>
+
+        <!-- ── Exercise 6.2: Scatterplot ── -->
+        <div class="ex6-card">
+          <div class="ex6-card-header">
+            <span class="ex5-badge">Exercise 6.2 · Scatterplot</span>
+            <h2 class="ex6-card-title">Energy Consumption vs Star Rating</h2>
+            <p class="ex6-card-desc">Each point is one TV model, coloured by screen technology. Hover any point to see its screen size, brand, and model. Higher star ratings do not always mean lower energy use.</p>
+          </div>
+
+          <div class="ex6-chart-wrap">
+            <div id="scatterplot"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="18" height="18" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="5" width="24" height="16" rx="2" stroke="white" stroke-width="2"/>
+          <path d="M10 21v3M20 21v3M7 24h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        EnergyScreen
+      </div>
+      <span class="footer-copy">COS30045 Data Visualisation · Exercise 3</span>
+      <div class="footer-ai">
+        <em>AI Declaration:</em> Code and design assisted by Claude (Anthropic). Data analysis and narrative authored by the student.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="d3_chart.js"></script>
+  <script src="ex5_charts.js"></script>
+  <script src="shared-constants.js"></script>
+  <script src="load-data.js"></script>
+  <script src="histogram.js"></script>
+  <script src="scatterplot.js"></script>
+  <script src="interactions.js"></script>
+</body>
+</html>
