@@ -1,5 +1,7 @@
 e;
 
+var ex5Built = false;   /* FIX: declare the guard flag so it isn't a ReferenceError */
+
 function buildEx5Charts() {
   if (ex5Built) return;
   ex5Built = true;
