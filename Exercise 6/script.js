@@ -28,6 +28,10 @@ function showPage(pageId) {
     buildEx5Charts();
   }
 
+  if (pageId === 'ex6') {
+    initEx6();               /* FIX: trigger Ex6 data load + chart draw on navigation */
+  }
+
   if (pageId === 'ex43') {
     buildD3Chart();
   }
