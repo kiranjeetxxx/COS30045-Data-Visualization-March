@@ -1,0 +1,112 @@
+
+
+.ex6-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 2rem 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Cards ── */
+.ex6-card {
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: box-shadow 0.2s;
+}
+.ex6-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+
+.ex6-card-header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #efefef;
+}
+.ex6-badge {
+  display: inline-block;
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: #d4a843; background: #0a0a0a;
+  padding: 4px 12px; border-radius: 100px; margin-bottom: 0.75rem;
+}
+.ex6-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; font-weight: 600; color: #0a0a0a;
+  margin-bottom: 0.35rem;
+}
+.ex6-card-desc {
+  font-size: 0.82rem; color: #888; line-height: 1.6;
+}
+
+/* ── Filter rows ── */
+.filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 28px;
+  background: #fafafa;
+  border-bottom: 1px solid #efefef;
+}
+.filter-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #888; min-width: 90px;
+}
+.filter-group {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+
+/* ── Filter buttons ── */
+.filter-btn {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem; font-weight: 600;
+  padding: 6px 16px;
+  border: 1.5px solid #0a0a0a;
+  border-radius: 100px;
+  background: #fff; color: #0a0a0a;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1;
+}
+.filter-btn:hover    { background: #0a0a0a; color: #fff; }
+.filter-btn.active   { background: #0a0a0a; color: #d4a843; }
+
+/* ── Chart wrap ── */
+.ex6-chart-wrap {
+  padding: 20px 24px 16px;
+}
+.ex6-chart-wrap svg {
+  width: 100%;
+  display: block;
+}
+
+/* ── Shared hover tooltip ── */
+.ex6-tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border-left: 3px solid #d4a843;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 999;
+  white-space: nowrap;
+}
+.ex6-tooltip strong { color: #d4a843; }
+
+/* ── Axis text ── */
+.axis text {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  fill: #888;
+}
+.axis .domain { display: none; }
