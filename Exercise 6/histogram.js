@@ -11,7 +11,7 @@ function drawHistogram(data) {
   innerChart = svg.append('g')
     .attr('transform', `translate(${margin.left},${margin.top})`);
 
-  /* Bins */a
+  /* Bins */
   const bins = binGenerator(data);
 
   /* Scales */
@@ -84,3 +84,4 @@ function drawHistogram(data) {
     .attr('fill','#888').attr('letter-spacing','0.08em')
     .text('NUMBER OF TV MODELS');
 }
+
