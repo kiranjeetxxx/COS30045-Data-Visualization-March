@@ -1,5 +1,4 @@
 
-
 const margin      = { top: 20, right: 30, bottom: 56, left: 64 };
 const width       = 800;
 const height      = 420;
@@ -9,7 +8,7 @@ const innerHeight = height - margin.top  - margin.bottom;
 const barColor      = '#0a0a0a';
 const barColorHover = '#d4a843';
 
-/* Filter configs */
+
 const filters_screen = [
   { id: 'all',  label: 'All',  isActive: true  },
   { id: 'LED',  label: 'LED',  isActive: false },
@@ -27,7 +26,7 @@ const filters_size = [
   { id: '98',  label: '98"',  isActive: false }
 ];
 
-/* Bin generator — shared so filters can reuse it */
+
 const binGenerator = d3.bin()
   .value(d => d.energyConsumption)
   .domain([0, 2800])
