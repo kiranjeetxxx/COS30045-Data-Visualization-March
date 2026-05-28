@@ -1,34 +1,28 @@
 
-
 let allData = [];
+let ex6Loaded = false;
 
-d3.csv('Ex6_TVdata.csv', d => ({
-  brand:             d.brand,
-  model:             d.model,
-  screenSize:        +d.screenSize,          /* + converts string -> number */
-  screenTech:        d.screenTech,
-  energyConsumption: +d.energyConsumption,
-  star:              +d.star
-})).then(data => {
+function initEx6() {
+  if (ex6Loaded) return;
+  ex6Loaded = true;
 
-  allData = data;
+  
+  try {
+    allData = ex6InlineData;
 
-  /* Verify data loaded correctly */
-  console.log('Data loaded:', data.length, 'rows');
-  console.log('Sample row:', data[0]);
-  console.log('Energy range:', d3.min(data, d => d.energyConsumption),
-              '–', d3.max(data, d => d.energyConsumption));
+    console.log('Data loaded:', allData.length, 'rows');
+    console.log('Sample row:', allData[0]);
+    console.log('Energy range:', d3.min(allData, d => d.energyConsumption),
+                '–', d3.max(allData, d => d.energyConsumption));
 
-  /* Draw both charts */
-  drawHistogram(data);
-  drawScatterplot(data);
+    drawHistogram(allData);
+    drawScatterplot(allData);
+    populateFilters(allData);
+    createTooltip();
 
-  /* Set up interactions */
-  populateFilters(data);
-  createTooltip();
-
-}).catch(err => {
-  console.error('Error loading CSV:', err);
-  document.getElementById('histogram').innerHTML =
-    '<p style="color:red;padding:20px">Could not load Ex6_TVdata.csv — make sure it is in the same folder as index.html.</p>';
-});
+  } catch(err) {
+    console.error('Error initialising Ex6:', err);
+    document.getElementById('histogram').innerHTML =
+      '<p style="color:red;padding:20px">Error loading chart data: ' + err.message + '</p>';
+  }
+}
